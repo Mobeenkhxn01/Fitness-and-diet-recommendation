@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recommendation Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+</head>
+<body>
+    <div class="container">
+        <h2>Your BMI: <span class="highlight">{{ bmi }}</span></h2>
+        <h3>Body Type: <span class="highlight">{{ level }}</span></h3>
+        <h3>Recommended Fitness Goal: <span class="highlight">{{ goal }}</span></h3>
+        <h3>Fitness Type: <span class="highlight">{{ fitness_type }}</span></h3>
+        
+        <h3>Recommended Exercises:</h3>
+        <div class="card-container">
+            {% for exercise in exercises %}
+                {% if exercise %}
+                    <div class="card animate__animated animate__fadeIn">
+                        <p><b>{{ exercise }}</b></p>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+
+        <h3>Diet Plan:</h3>
+        <div class="diet-plan">
+            {% for item in diet %}
+                {% if item.main_item %}
+                    <div class="diet-item animate__animated animate__fadeIn">
+                        <strong>{{ item.main_item }}:</strong>
+                        <ul>
+                            {% for subitem in item.subitems %}
+                                {% if subitem %}
+                                    <li>{{ subitem }}</li>
+                                {% endif %}
+                            {% endfor %}
+                        </ul>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+
+        <h3>Weekly Planner:</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Day</th>
+                    <th>Exercise</th>
+                    <th>Diet</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for day, details in planner.items() %}
+                    <tr>
+                        <td>{{ day }}</td>
+                        <td>
+                            <ul>
+                                {% for exercise in details['exercise'] %}
+                                    {% if exercise %}
+                                        <li>{{ exercise }}</li>
+                                    {% endif %}
+                                {% endfor %}
+                            </ul>
+                        </td>
+                        <td>
+                            <ul>
+                                {% for diet_item in details['diet'] %}
+                                    {% if diet_item %}
+                                        <li>{{ diet_item }}</li>
+                                    {% endif %}
+                                {% endfor %}
+                            </ul>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <h3>Additional Recommendations:</h3>
+        <p class="recommendation">{{ Recommendation }}</p>
+    </div>
+</body>
+</html>

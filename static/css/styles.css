@@ -1,0 +1,160 @@
+/* General Styles */
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f8ff; 
+    color: #333; 
+    margin: 0;
+    padding: 20px;
+    animation: fadeIn 1s ease; 
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto; 
+    padding: 20px;
+    background-color: #ffffff; 
+    border-radius: 10px; 
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); 
+}
+
+/* Container Styles */
+.container1 {
+    max-width: 800px;
+    margin: 0 auto; 
+    padding: 20px;
+    background-color: #ffffff; 
+    border-radius: 10px; 
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); 
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Headings */
+h1, h2, h3 {
+    text-align: center; 
+    color: #007BFF; 
+}
+
+/* Form Styles for index.html */
+.recommendation-form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin: 10px 0 5px; 
+    font-weight: bold; 
+}
+
+input[type="number"], select {
+    padding: 10px; 
+    border: 1px solid #ccc; 
+    border-radius: 5px; 
+    margin-bottom: 15px; 
+    transition: border-color 0.2s; 
+}
+
+input[type="number"]:focus, select:focus {
+    border-color: #007BFF; 
+}
+
+.submit-button {
+    background-color: #007BFF; 
+    color: white; 
+    padding: 10px;
+    border: none; 
+    border-radius: 5px; 
+    cursor: pointer; 
+    transition: background-color 0.2s; 
+}
+
+.submit-button:hover {
+    background-color: #0056b3; 
+}
+
+/* List and Table Styles for result.html */
+ul {
+    list-style-type: none;
+    padding: 0; 
+}
+
+ul li {
+    background-color: #e7f3fe;
+    margin: 5px 0; 
+    padding: 10px; 
+    border-radius: 5px; 
+    transition: transform 0.2s; 
+}
+
+ul li:hover {
+    transform: translateY(-3px); 
+}
+
+table {
+    width: 100%; 
+    border-collapse: collapse; 
+    margin-top: 20px; 
+}
+
+table, th, td {
+    border: 1px solid #ddd; 
+    padding: 8px; 
+    text-align: center; 
+}
+
+th {
+    background-color: #007BFF;
+    color: white; 
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+tr:hover {
+    background-color: #ddd; 
+}
+
+.highlight {
+    color: #28a745; 
+    font-weight: bold; 
+}
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; 
+    margin: 20px 0; 
+}
+
+.card {
+    background-color: #e7f3fe; 
+    border: 1px solid #007BFF; 
+    border-radius: 5px;
+    padding: 15px;
+    margin: 10px; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+    transition: transform 0.2s; 
+}
+
+.card:hover {
+    transform: scale(1.05); 
+}
+/* Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0; 
+    }
+    to {
+        opacity: 1; 
+    }
+}
